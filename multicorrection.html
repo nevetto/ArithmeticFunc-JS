@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <div style="background-image:  url(bckimg.jpg); width: 2500px; height: 1500px; background-repeat: repeat-x;">
+        <div style="background-color: goldenrod; height: fit-content;">
+            <h2 style="color: darkolivegreen;">ARITHMETIC TABLE</h2>
+            <select  id="sel">
+                <option value="*">multiply</option>
+                <option value="/">divide</option>
+                <option value="+">addition</option>
+                <option value="-">subtraction</option>
+            </select>
+    
+            <input type="number" min="1" id="rows" name="">
+            <input type="number" min="1" id="cols" name="">
+            <button onclick="myFunc()">click</button>
+            <div id="res"></div>
+    
+        </div>
+    </div>
+    <script>
+        function myFunc() {
+            var tab = "<table border='1'>";
+                for (var i = 1; i <= rows.value; i++) {
+                    tab+="<tr>";
+                        for(var j = 1; j <= cols.value; j++) {
+                            tab+="<td>" + i+sel.value+j+"="+eval(i+sel.value+j).toFixed(2)+"</td>"
+                        }
+                                tab += "</tr>";
+                        }
+                        tab += "</table>";
+                        res.innerHTML = tab;
+                }
+        
+    </script>
+
+
+</body>
+</html>
